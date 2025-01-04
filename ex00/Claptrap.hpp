@@ -26,6 +26,6 @@ class Claptrap
         unsigned int   getEnergyPoints(void) const;
         unsigned int   getAttackDamage(void) const;
 
-        void           setHitpoints(void);
-        void           setEnergyPoints(void);
+        void           setHitpoints(int amount);
+        void           decrementEnergyPoints(void);
 };
