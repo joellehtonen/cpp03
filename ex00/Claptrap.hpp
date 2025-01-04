@@ -27,5 +27,6 @@ class Claptrap
         unsigned int   getAttackDamage(void) const;
 
         void           setHitpoints(int amount);
+        void           setAttackDamage(int amount);
         void           decrementEnergyPoints(void);
 };

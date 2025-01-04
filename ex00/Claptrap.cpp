@@ -1,23 +1,28 @@
 #include "Claptrap.hpp"
 
-Claptrap::Claptrap () {
+Claptrap::Claptrap () : _name("Default"), _hitPoints(10), _energyPoints(10), _attackDamage(0) {
     std::cout << "A default claptrap is made!" << std::endl;
 };
+
+Claptrap::Claptrap (std::string name) : _hitPoints(10), _energyPoints(10), _attackDamage(0) {
+    this->_name = name;
+    std::cout << "Claptrap " << getName() << " is made!" << std::endl;
+};
+
 Claptrap::~Claptrap () {
     std::cout << "Claptrap " << getName() << " is destroyed!" << std::endl;
 };
+
 Claptrap::Claptrap(const Claptrap& copy) : _name(copy._name) {
     std::cout << "A copy claptrap is copied from " << getName() << " !" << std::endl;
 };
+
 Claptrap& Claptrap::operator=(const Claptrap& source) {
     std::cout << "A copy claptrap is assigned from the spare parts of " << getName() << " !" << std::endl;
     this->_name = source._name;
     return (*this);
 }
 
-Claptrap::Claptrap (std::string name) : _hitPoints(10), _energyPoints(10), _attackDamage(0) {
-    std::cout << "Claptrap " << getName() << " is made!" << std::endl;
-};
 void    Claptrap::attack(const std::string& target)
 {
     unsigned int    hitPoints = getHitPoints();
@@ -27,7 +32,7 @@ void    Claptrap::attack(const std::string& target)
     {   
         decrementEnergyPoints();
         // attack somehow
-        std::cout << "Claptrap " << getName() << "attacks " << target << ", causing " << getAttackDamage() << " points of damage!" << std::endl;
+        std::cout << "Claptrap " << getName() << " attacks " << target << ", causing " << getAttackDamage() << " points of damage!" << std::endl;
     }
     else
         std::cout << "Claptrap " << getName() << " malfunctioned, unable to attack anymore!" << std::endl;    
@@ -70,6 +75,10 @@ unsigned int    Claptrap::getEnergyPoints(void) const {
 void            Claptrap::setHitpoints(int amount) {
     this->_hitPoints += amount;
 }
+void            Claptrap::setAttackDamage(int amount) {
+    this->_attackDamage += amount;
+    std::cout << "Claptrap " << getName() << " increases its attack damage by " << amount << "!" << std::endl;
+};
 void            Claptrap::decrementEnergyPoints(void) {
     if (this->_energyPoints > 0)
         this->_energyPoints -= 1;
