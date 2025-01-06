@@ -6,11 +6,11 @@ Claptrap::Claptrap () : _name("Default"), _hitPoints(10), _energyPoints(10), _at
 
 Claptrap::Claptrap (std::string name) : _hitPoints(10), _energyPoints(10), _attackDamage(0) {
     this->_name = name;
-    std::cout << "Claptrap " << getName() << " is made!" << std::endl;
+    std::cout << "Claptrap " << getName() << " is turned on!" << std::endl;
 };
 
 Claptrap::~Claptrap () {
-    std::cout << "Claptrap " << getName() << " is destroyed!" << std::endl;
+    std::cout << "Claptrap " << getName() << " is turned off!" << std::endl;
 };
 
 Claptrap::Claptrap(const Claptrap& copy) : _name(copy._name) {
@@ -39,22 +39,25 @@ void    Claptrap::attack(const std::string& target)
 };
 void    Claptrap::takeDamage(unsigned int amount)
 {
-    unsigned int    hitPoints = getHitPoints();
-        if (hitPoints > 0)
+        if (getHitPoints() > 0)
         {
             setHitpoints(-amount);
-            std::cout << "Claptrap " << getName() << " suffers " << amount << " damage! It hurts!" << std::endl;
+            std::cout << "Claptrap " << getName() << " suffers " << amount << " damage! It hurts! ";
+            if (getHitPoints() > 0)
+                std::cout << "It only has " << getHitPoints() << " hit points remaining!" << std::endl;
+        else
+            std::cout << getName() << " is completely broken to pieces!" << std::endl;
         }
         else
-            std::cout << "Claptrap " << getName() << " is already broken. No use in hitting it anymore..." << std::endl;
+            std::cout << "But " << getName() << " is already broken. No use in hitting it anymore..." << std::endl;
 };
 void    Claptrap::beRepaired(unsigned int amount)
 {
-    if (this->_hitPoints > 0 && this->_energyPoints > 0)
+    if (getHitPoints() > 0 && getEnergyPoints() > 0)
     {
         decrementEnergyPoints();
         setHitpoints(+amount);
-        std::cout << "Claptrap " << getName() << " fixes itself! It's getting " << amount << " hitpoints back, to a total of " << getHitPoints() << " hp!" << std::endl;
+        std::cout << "Claptrap " << getName() << " fixes itself! It's getting " << amount << " hit points back, to a total of " << getHitPoints() << " hp!" << std::endl;
     }
     else
         std::cout << "Claptrap " << getName() << " malfunctioned, unable to repair itself anymore!" << std::endl;
@@ -63,13 +66,13 @@ void    Claptrap::beRepaired(unsigned int amount)
 std::string     Claptrap::getName(void) const {
     return (this->_name);
 }
-unsigned int    Claptrap::getAttackDamage(void) const {
+int    Claptrap::getAttackDamage(void) const {
     return (this->_attackDamage);
 }
-unsigned int    Claptrap::getHitPoints(void) const {
+int    Claptrap::getHitPoints(void) const {
     return (this->_hitPoints);
 }
-unsigned int    Claptrap::getEnergyPoints(void) const {
+int    Claptrap::getEnergyPoints(void) const {
     return (this->_energyPoints);
 }
 void            Claptrap::setHitpoints(int amount) {

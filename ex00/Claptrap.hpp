@@ -6,9 +6,9 @@ class Claptrap
 {
     private:
         std::string     _name;
-        unsigned int    _hitPoints;
-        unsigned int    _energyPoints;
-        unsigned int    _attackDamage;
+        int    _hitPoints;
+        int    _energyPoints;
+        uint    _attackDamage;
 
     public:
         Claptrap();
@@ -22,9 +22,9 @@ class Claptrap
         void    beRepaired(unsigned int amount);
 
         std::string    getName(void) const;
-        unsigned int   getHitPoints(void) const;
-        unsigned int   getEnergyPoints(void) const;
-        unsigned int   getAttackDamage(void) const;
+        int   getHitPoints(void) const;
+        int   getEnergyPoints(void) const;
+        int   getAttackDamage(void) const;
 
         void           setHitpoints(int amount);
         void           setAttackDamage(int amount);
