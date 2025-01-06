@@ -1,23 +1,22 @@
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main(void)
 {
-    ClapTrap a("A.I. Pacino");
-    ClapTrap o("Robot DeNiro");
+    ScavTrap a("Marl-ON Brand:0");
+    ScavTrap o("Jack Nickel-50-N");
 
-    a.setAttackDamage(5);
     a.attack(o.getName());
     o.takeDamage(a.getAttackDamage());
-    o.beRepaired(2);
-    o.beRepaired(2);
-    o.attack(a.getName());
-    o.setAttackDamage(7);
+    o.beRepaired(5);
+    o.guardGate();
     o.attack(a.getName());
     a.takeDamage(o.getAttackDamage());
-    a.beRepaired(2);
+    a.beRepaired(5);
     o.attack(a.getName());
     a.takeDamage(o.getAttackDamage());
-    a.beRepaired(2);
+    o.setAttackDamage(100);
     o.attack(a.getName());
     a.takeDamage(o.getAttackDamage());
+    a.guardGate();
+    o.guardGate();
 }

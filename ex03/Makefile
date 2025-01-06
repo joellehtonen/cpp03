@@ -1,8 +1,11 @@
-NAME	=	and_open
+NAME	=	repetitive_work
 CC		=	c++
 FLAGS	=	-Wall -Wextra -Werror -std=c++20
 SRCS	=	main.cpp \
-			ClapTrap.cpp
+			ClapTrap.cpp \
+			FragTrap.cpp \
+			ScavTrap.cpp \
+			DiamondTrap.cpp
 OBJS	=	$(SRCS:.cpp=.o)
 
 all: $(NAME)

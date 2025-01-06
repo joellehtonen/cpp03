@@ -1,8 +1,9 @@
-NAME	=	and_open
+NAME	=	serena_my_love
 CC		=	c++
 FLAGS	=	-Wall -Wextra -Werror -std=c++20
 SRCS	=	main.cpp \
-			ClapTrap.cpp
+			ClapTrap.cpp \
+			ScavTrap.cpp
 OBJS	=	$(SRCS:.cpp=.o)
 
 all: $(NAME)

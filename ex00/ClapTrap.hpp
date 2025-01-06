@@ -2,21 +2,21 @@
 #include <string>
 #include <iostream>
 
-class Claptrap
+class ClapTrap
 {
     private:
         std::string     _name;
-        int    _hitPoints;
-        int    _energyPoints;
-        uint    _attackDamage;
+        int             _hitPoints;
+        int             _energyPoints;
+        int             _attackDamage;
 
     public:
-        Claptrap();
-        ~Claptrap();
-        Claptrap(const Claptrap &copy);
-        Claptrap& operator=(const Claptrap &source);
+        ClapTrap();
+        ~ClapTrap();
+        ClapTrap(const ClapTrap &copy);
+        ClapTrap& operator=(const ClapTrap &source);
 
-        Claptrap(std::string _name);
+        ClapTrap(std::string _name);
         void    attack(const std::string& target);
         void    takeDamage(unsigned int amount);
         void    beRepaired(unsigned int amount);
