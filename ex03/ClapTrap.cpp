@@ -62,6 +62,7 @@ void    ClapTrap::beRepaired(unsigned int amount)
         decrementEnergyPoints();
         setHitpoints(+amount);
         std::cout << "ClapTrap " << getName() << " fixes itself! It's getting " << amount << " hit points back, to a total of " << getHitPoints() << " hp!" << std::endl;
+        std::cout << "But its energy points also decrease to " << this->_energyPoints << "!" << std::endl;
     }
     else
         std::cout << "ClapTrap " << getName() << " malfunctioned, unable to repair itself anymore!" << std::endl;

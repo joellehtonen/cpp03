@@ -5,6 +5,7 @@ ScavTrap::ScavTrap() : ClapTrap()
     _name = "Default";
     _hitPoints = 100;
     _energyPoints = 50;
+    _defaultEnergyPoints = ST_DEFAULT_ENERGY_POINTS;
     _attackDamage = 20;
     _guarding = false;
     std::cout << "A default ScavTrap is made!" << std::endl;
@@ -15,6 +16,7 @@ ScavTrap::ScavTrap (std::string name) : ClapTrap(name)
     _name = name;
     _hitPoints = 100;
     _energyPoints = 50;
+    _defaultEnergyPoints = ST_DEFAULT_ENERGY_POINTS;
     _attackDamage = 20;
     _guarding = false;
     std::cout << "ScavTrap " << getName() << " is initialized!" << std::endl;

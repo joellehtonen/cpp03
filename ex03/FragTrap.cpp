@@ -41,5 +41,5 @@ void FragTrap::highFivesGuys(void)
 	if (getHitPoints() > 0)
 		std::cout << "FragTrap " << getName() << " is happy and wants to high-five everyone!" << std::endl;
 	else
-		std::cout << "FragTrap " << getName() << " really wants a high-five, but cannot lift its dislocated arm" << std::endl;
+		std::cout << "FragTrap " << getName() << " really wants a high-five, but cannot lift its dislocated arm..." << std::endl;
 };

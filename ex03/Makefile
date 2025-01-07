@@ -1,6 +1,6 @@
 NAME	=	now_its_weird
 CC		=	c++
-FLAGS	=	-Wall -Wextra -Werror -std=c++20
+FLAGS	=	-Wall -Wextra -Werror -Wshadow -std=c++20
 SRCS	=	main.cpp \
 			ClapTrap.cpp \
 			FragTrap.cpp \

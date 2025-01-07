@@ -1,6 +1,6 @@
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap() : FragTrap(), ScavTrap() {
+DiamondTrap::DiamondTrap() : ScavTrap(), FragTrap() {
 	_name = "Default";
 	_hitPoints = FragTrap::_hitPoints;
 	_energyPoints = ScavTrap::_energyPoints;
@@ -10,21 +10,21 @@ DiamondTrap::DiamondTrap() : FragTrap(), ScavTrap() {
 
 DiamondTrap::DiamondTrap(std::string name) 
 	: ClapTrap(name + "_clap_name"), 
-	FragTrap(), 
-	ScavTrap(), 
+	ScavTrap(name + "_scav_name"), 
+	FragTrap(name + "_frag_name"), 
 	_name(name) 
 {
 	_hitPoints = FragTrap::_hitPoints;
-	_energyPoints = ScavTrap::_energyPoints;
+	_energyPoints = ScavTrap::_defaultEnergyPoints;
 	_attackDamage = FragTrap::_attackDamage;
 	std::cout << "DiamondTrap " << this->_name << " is born!" << std::endl;
 };
 
 DiamondTrap::~DiamondTrap() {
-	std::cout << "DiamondTrap " << this->_name << " is reduced to rubble!" << std::endl;
+	std::cout << "DiamondTrap " << this->_name << " is nothing but ash!" << std::endl;
 };
 
-DiamondTrap::DiamondTrap(const DiamondTrap& copy) : ClapTrap(), FragTrap(), ScavTrap() {
+DiamondTrap::DiamondTrap(const DiamondTrap& copy) : ClapTrap(), ScavTrap(), FragTrap() {
 	*this = copy;
 	std::cout << "DiamondTrap copies itself from " << copy.getName() << std::endl;
 };
