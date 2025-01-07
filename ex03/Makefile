@@ -1,4 +1,4 @@
-NAME	=	repetitive_work
+NAME	=	now_its_weird
 CC		=	c++
 FLAGS	=	-Wall -Wextra -Werror -std=c++20
 SRCS	=	main.cpp \
