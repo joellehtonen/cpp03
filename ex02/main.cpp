@@ -2,7 +2,7 @@
 
 int main(void)
 {
-    FragTrap a("Martin Steel");
+    FragTrap a("James Androidfini");
     FragTrap o("Dustin Bottman");
 
     a.attack(o.getName());

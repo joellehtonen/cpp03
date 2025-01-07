@@ -1,9 +1,9 @@
-#include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int main(void)
 {
-    FragTrap a("X");
-    FragTrap o("Y");
+    DiamondTrap a("Bruce Spring-Steel");
+    DiamondTrap o("Neil Gun");
 
     a.attack(o.getName());
     o.takeDamage(a.getAttackDamage());
@@ -16,4 +16,6 @@ int main(void)
     a.takeDamage(o.getAttackDamage());
     a.highFivesGuys();
     o.highFivesGuys();
+    a.whoAmI();
+    o.whoAmI();
 }
