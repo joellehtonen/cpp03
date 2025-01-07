@@ -4,16 +4,16 @@
 
 class ScavTrap : virtual public ClapTrap
 {
-	private:
-        bool    _guarding;
+        protected:
+                bool    _guarding;
 
 	public:
-        ScavTrap();
+                ScavTrap();
 		ScavTrap(std::string _name);
-        ~ScavTrap();
-        ScavTrap(const ScavTrap &copy);
-        ScavTrap& operator=(const ScavTrap &source);
+                ~ScavTrap();
+                ScavTrap(const ScavTrap &copy);
+                ScavTrap& operator=(const ScavTrap &source);
 
-        void    attack(const std::string& target) override;
-        void    guardGate();
+                void    attack(const std::string& target) override;
+                void    guardGate();
 };
