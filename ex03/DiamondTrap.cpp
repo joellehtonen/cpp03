@@ -1,7 +1,6 @@
 #include "DiamondTrap.hpp"
 
 DiamondTrap::DiamondTrap() : ScavTrap(), FragTrap() {
-	_name = "Default";
 	_hitPoints = FragTrap::_hitPoints;
 	_energyPoints = ScavTrap::_energyPoints;
 	_attackDamage = FragTrap::_attackDamage;
@@ -9,9 +8,9 @@ DiamondTrap::DiamondTrap() : ScavTrap(), FragTrap() {
 };
 
 DiamondTrap::DiamondTrap(std::string name) 
-	: ClapTrap(name + "_clap_name"), 
-	ScavTrap(name + "_scav_name"), 
-	FragTrap(name + "_frag_name"), 
+	: ClapTrap(name + "_clap_name"),
+	// ScavTrap(name + "_scav_name"), 
+	// FragTrap(name + "_frag_name"), 
 	_name(name) 
 {
 	_hitPoints = FragTrap::_hitPoints;

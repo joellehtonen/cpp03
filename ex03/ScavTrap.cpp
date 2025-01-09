@@ -2,7 +2,6 @@
 
 ScavTrap::ScavTrap() : ClapTrap()
 {   
-    _name = "Default";
     _hitPoints = 100;
     _energyPoints = 50;
     _defaultEnergyPoints = ST_DEFAULT_ENERGY_POINTS;
